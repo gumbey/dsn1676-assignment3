@@ -6,7 +6,6 @@
 
 html {
     box-sizing: border-box;
-
     -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -18,6 +17,68 @@ html {
     box-sizing: inherit;
 }
 
+.asteroid {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    -webkit-animation: asteroid-rotate 8s linear infinite;
+    animation: asteroid-rotate 8s linear infinite;
+    transform-origin: center;
+}
+
+@-webkit-keyframes asteroid-rotate {
+     0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes asteroid-rotate {
+     0% {
+        transform: rotate(0deg) translate(0px);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(500px);
+    }
+}
+
+.ship {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    -webkit-animation: ship 2s ease-in infinite;
+    animation: ship 5s linear infinite;
+}
+
+@-webkit-keyframes ship {
+    0% { -webkit-transform: rotate(0deg) translate(0); }
+    20% { -webkit-transform: rotate(-50deg) translate(20px); }
+    33% { -webkit-transform: rotate(-60deg) translate(-1200px); }
+    100% { -webkit-transform: rotate(-50deg) translate(-1200px); }
+}
+
+@-webkit-keyframes ship {
+    0% {
+    	-webkit-transform: rotate(0deg) translate(0);
+    }
+
+    20% {
+    	-webkit-transform: rotate(-50deg) translate(20px);
+    }
+
+    33% {
+    	-webkit-transform: rotate(-60deg) translate(-1200px);
+    }
+
+    100% {
+    	-webkit-transform: rotate(-50deg) translate(-1200px);
+    }
+}
+
 .stars {
     background-image:url(../images/stars.svg);
     width: 100%;
@@ -26,81 +87,12 @@ html {
     animation: stars 20s infinite;
 }
 
-.asteroid {
-    position: absolute;
-    top: 25%;
-    left: 33%;
-
-    -webkit-animation: asteroid-rotate 8s linear infinite;
-    animation: asteroid-rotate 8s linear infinite;
-
-}
-
-@-webkit-keyframes asteroid-rotate {
-     0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-
-}
-
-@keyframes asteroid-rotate {
-
-     0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-
-}
-
-.ship {
-    position: absolute;
-    top: 500px;
-    left: 700px;
-    -webkit-animation: ship 8s infinite;
-    animation: ship 8s infinite;
-    transform-origin: 33%;
-
-}
-
-@-webkit-keyframes ship {
-
-    0% {
-        -webkit-transform: translate(0);
-    }
-
-    50% {
-        -webkit-transform: translate(20px);
-    }
-
-    100% {
-        -webkit-transform: translate(-1000px);
-    }
-}
-
-@keyframes ship {
-
-    0% {
-        transform: translate(0);
-    }
-
-    50% {
-        transform: translate(20px);
-    }
-
-    100% {
-        transform: translate(-1000px);
-    }
-}
-
 @-webkit-keyframes stars {
     0% { -webkit-transform: scale(1,1) }
     100% { -webkit-transform: scale(1.25,1.25) }
 }
 
 @keyframes stars {
-
     0% {
     transform: scale(1,1)
     }
@@ -108,5 +100,4 @@ html {
     100% {
         transform: scale(1.25,1.25)
     }
-
 }
